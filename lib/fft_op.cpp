@@ -13,7 +13,7 @@
 
 #include <vector>
 #include <math.h>
-#include "ofa1/ofa.h"
+#include "../include/ofa1/ofa.h"
 #include "fft_op.h"
 #include "error_op.h"
 
@@ -44,14 +44,14 @@ FFT_op::~FFT_op()
 		delete[] InBuf;
 	if (AmpSpectWin)
 		delete[] AmpSpectWin;
-        if (TimeSpectra) 
+        if (TimeSpectra)
                 delete[] TimeSpectra;
-        if (Hamming) 
+        if (Hamming)
                 delete[] Hamming;
 }
 
 
-void 
+void
 FFT_op::LoadSignal(Signal_op *sig)
 {
 	Signal = sig;
@@ -84,7 +84,7 @@ FFT_op::SetSize(int N, bool optimize)
 	WindowInit();
 }
 
-void 
+void
 FFT_op::SetStep(int step) {
 	if (Rate==0)
 		throw OnePrintError("SetStep:programming error:Rate");
@@ -106,8 +106,8 @@ FFT_op::WindowInit()
 		Hamming[i] = 0.54 - 0.46*cos(i*(TwoPI/(FrameSize-1)));
 }
 
-void 
-FFT_op::CreateBuffer(int numBins, int numFrames, bool init) 
+void
+FFT_op::CreateBuffer(int numBins, int numFrames, bool init)
 {
 	NumFrames = numFrames;
 	NumBins = numBins;
@@ -125,13 +125,13 @@ FFT_op::CreateBuffer(int numBins, int numFrames, bool init)
 
 
 // Mono signals only
-void 
+void
 FFT_op::Compute(double ovlap)
 {
 	long i;
 	int j,k,m;
 
-	if (ovlap != Overlap || !TimeSpectra) 
+	if (ovlap != Overlap || !TimeSpectra)
 	{
 		Overlap = ovlap;
 		if (TimeSpectra)
@@ -145,7 +145,7 @@ FFT_op::Compute(double ovlap)
 	j = BufSize;		// safety
 
 	// m counts # of StepSize's we've made
-	for (i=0, m=0; i<=Signal->GetLength()-FrameSize; i+=StepSize, m++) 
+	for (i=0, m=0; i<=Signal->GetLength()-FrameSize; i+=StepSize, m++)
 	{
 		for (j=0; j<FrameSize; j++) {
 			// copy and normalize samples into fft input buffer
@@ -186,7 +186,7 @@ FFT_op::ComputeWindow(double* in)
 
 	// Compute amplitude spectrum for window
 	// We only got half the values, because the rest was thrown away in the (identical)
-	// complex conjugate part (negative frequencies). To get the amplitude back 
+	// complex conjugate part (negative frequencies). To get the amplitude back
 	// we must multiply by 2.
 	AmpSpectWin[0] = 2*sqrt(OutBuf[0]*OutBuf[0]);		// DC component
 	for (int k=1; k<(FrameSize+1)/2; ++k)		// (k < N/2 rounded up)
@@ -197,7 +197,7 @@ FFT_op::ComputeWindow(double* in)
 
 
 // Resample the frames to a new reduced size
-void 
+void
 FFT_op::ReSample(int nBins, bool melScale)
 {
 	double hiFreq = 8000.0;			// Everything above 8 KHz is ignored
@@ -266,7 +266,7 @@ FFT_op::ReSample(int nBins, bool melScale)
 }
 
 
-// convert Hz to MIDI note number. 
+// convert Hz to MIDI note number.
 int
 FFT_op::FreqToMidi(double hz)
 {

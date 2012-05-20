@@ -10,7 +10,7 @@
 #define __PROTOCOL_H__
 
 #include <string>
-#include "ofa1/ofa.h"
+#include "../include/ofa1/ofa.h"
 
 using namespace std;
 
@@ -102,7 +102,7 @@ public:
 	return true;
     }
     // Get your unique key at http://www.musicdns.org
-    TrackInformation *getMetadata(string client_key, string client_version, 
+    TrackInformation *getMetadata(string client_key, string client_version,
 	    bool metadataFlag)
     {
 	if (!retrieve_metadata(client_key, client_version, &info, metadataFlag))

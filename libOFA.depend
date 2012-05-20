@@ -1,0 +1,283 @@
+# depslib dependency file v1.0
+1337507348 source:/home/vikesh/bin/libofa-0.9.3/examples/example.cpp
+	<stdio.h>
+	<cstring>
+	<iostream>
+	<fstream>
+	"../include/util.h"
+	"protocol.h"
+
+1337507314 /home/vikesh/bin/libofa-0.9.3/include/util.h
+	<stdio.h>
+	<stdlib.h>
+
+1337508357 /home/vikesh/bin/libofa-0.9.3/examples/protocol.h
+	<string>
+	"../include/ofa1/ofa.h"
+
+1147284525 /home/vikesh/bin/libofa-0.9.3/include/ofa1/ofa.h
+
+1337508586 source:/home/vikesh/bin/libofa-0.9.3/examples/protocol.cpp
+	<stdio.h>
+	<stdlib.h>
+	<cstring>
+	<map>
+	"../lib/expat/expat.h"
+	<curl/curl.h>
+	<curl/easy.h>
+	"protocol.h"
+
+1147284351 source:/home/vikesh/bin/libofa-0.9.3/examples/uselame.cpp
+	"protocol.h"
+	"windows.h"
+	<sys/wait.h>
+
+1147284356 source:/home/vikesh/bin/libofa-0.9.3/examples/wavefile.cpp
+	"protocol.h"
+	"io.h"
+	<fcntl.h>
+
+1147283930 source:/home/vikesh/bin/libofa-0.9.3/lib/AFLIB/aflibConverter.cpp
+	<config.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	"aflibConverter.h"
+	"aflibConverterLargeFilter.h"
+	"aflibConverterSmallFilter.h"
+	"../error_op.h"
+
+1147283930 /home/vikesh/bin/libofa-0.9.3/lib/AFLIB/aflibConverter.h
+	<config.h>
+
+1147283930 /home/vikesh/bin/libofa-0.9.3/lib/AFLIB/aflibConverterLargeFilter.h
+	<config.h>
+
+1147283930 /home/vikesh/bin/libofa-0.9.3/lib/AFLIB/aflibConverterSmallFilter.h
+	<config.h>
+
+1147284080 /home/vikesh/bin/libofa-0.9.3/lib/error_op.h
+	<string>
+
+1337508365 source:/home/vikesh/bin/libofa-0.9.3/lib/fft_op.cpp
+	<vector>
+	<math.h>
+	"../include/ofa1/ofa.h"
+	"fft_op.h"
+	"error_op.h"
+
+1147284084 /home/vikesh/bin/libofa-0.9.3/lib/fft_op.h
+	"../config_win32.h"
+	"../config.h"
+	"signal_op.h"
+	"fftlib_op.h"
+
+1337506892 /home/vikesh/bin/libofa-0.9.3/config.h
+
+1147284090 /home/vikesh/bin/libofa-0.9.3/lib/signal_op.h
+
+1147284082 /home/vikesh/bin/libofa-0.9.3/lib/fftlib_op.h
+	"rfftw.h"
+	"fftw3.h"
+	<Accelerate/Accelerate.h>
+
+1147284059 source:/home/vikesh/bin/libofa-0.9.3/lib/fftlibw3_op.cpp
+	"../config_win32.h"
+	"../config.h"
+	"fftlib_op.h"
+
+1147284067 source:/home/vikesh/bin/libofa-0.9.3/lib/frametracker_op.cpp
+	<math.h>
+	"frametracker_op.h"
+	"trackdata_op.h"
+
+1147284087 /home/vikesh/bin/libofa-0.9.3/lib/frametracker_op.h
+	"fft_op.h"
+	"tracklist_op.h"
+	"trackdata_op.h"
+
+1147284097 /home/vikesh/bin/libofa-0.9.3/lib/tracklist_op.h
+	"trackframe_op.h"
+
+1147284095 /home/vikesh/bin/libofa-0.9.3/lib/trackframe_op.h
+
+1147284093 /home/vikesh/bin/libofa-0.9.3/lib/trackdata_op.h
+
+1337508498 source:/home/vikesh/bin/libofa-0.9.3/lib/mainprint.cpp
+	<vector>
+	"../include/ofa1/ofa.h"
+	"signal_op.h"
+	"fft_op.h"
+	"frametracker_op.h"
+	"error_op.h"
+	"JAMA/jama_svd.h"
+
+1147283930 /home/vikesh/bin/libofa-0.9.3/lib/JAMA/jama_svd.h
+	"tnt_array1d.h"
+	"tnt_array1d_utils.h"
+	"tnt_array2d.h"
+	"tnt_array2d_utils.h"
+	"tnt_math_utils.h"
+
+1147283930 /home/vikesh/bin/libofa-0.9.3/lib/JAMA/tnt_array1d.h
+	<cstdlib>
+	<iostream>
+	<assert.h>
+
+1147283930 /home/vikesh/bin/libofa-0.9.3/lib/JAMA/tnt_array1d_utils.h
+	<cstdlib>
+	<cassert>
+
+1147283930 /home/vikesh/bin/libofa-0.9.3/lib/JAMA/tnt_array2d.h
+	<cstdlib>
+	<iostream>
+	<assert.h>
+
+1147283930 /home/vikesh/bin/libofa-0.9.3/lib/JAMA/tnt_array2d_utils.h
+	<cstdlib>
+	<cassert>
+
+1337506082 /home/vikesh/bin/libofa-0.9.3/lib/JAMA/tnt_math_utils.h
+	<math.h>
+
+1337506163 source:/home/vikesh/bin/libofa-0.9.3/lib/signal_op.cpp
+	<math.h>
+	"signal_op.h"
+	"AFLIB/aflibConverter.h"
+	"error_op.h"
+	<cmath>
+
+1147284074 source:/home/vikesh/bin/libofa-0.9.3/lib/trackdata_op.cpp
+	"trackdata_op.h"
+
+1147284076 source:/home/vikesh/bin/libofa-0.9.3/lib/trackframe_op.cpp
+	<math.h>
+	"trackdata_op.h"
+	"trackframe_op.h"
+
+1147284078 source:/home/vikesh/bin/libofa-0.9.3/lib/tracklist_op.cpp
+	"trackdata_op.h"
+	"tracklist_op.h"
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/expat.h
+	<stdlib.h>
+	"expat_external.h"
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/expat_external.h
+
+1337508693 source:/home/vikesh/bin/libofa-0.9.3/lib/expat/xmlparse.c
+	<stddef.h>
+	<string.h>
+	<assert.h>
+	"winconfig.h"
+	"macconfig.h"
+	"amigaconfig.h"
+	"watcomconfig.h"
+	<expat_config.h>
+	"ascii.h"
+	"expat.h"
+	"internal.h"
+	"xmltok.h"
+	"xmlrole.h"
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/winconfig.h
+	<windows.h>
+	<memory.h>
+	<string.h>
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/macconfig.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/amigaconfig.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/ascii.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/internal.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/xmltok.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/xmlrole.h
+	"xmltok.h"
+
+1337508693 source:/home/vikesh/bin/libofa-0.9.3/lib/expat/xmlrole.c
+	<stddef.h>
+	"winconfig.h"
+	"macconfig.h"
+	"amigaconfig.h"
+	"watcomconfig.h"
+	<expat_config.h>
+	"expat_external.h"
+	"internal.h"
+	"xmlrole.h"
+	"ascii.h"
+
+1337508693 source:/home/vikesh/bin/libofa-0.9.3/lib/expat/xmltok.c
+	<stddef.h>
+	"winconfig.h"
+	"macconfig.h"
+	"amigaconfig.h"
+	"watcomconfig.h"
+	<expat_config.h>
+	"expat_external.h"
+	"internal.h"
+	"xmltok.h"
+	"nametab.h"
+	"xmltok_impl.h"
+	"ascii.h"
+	"xmltok_impl.c"
+	"asciitab.h"
+	"utf8tab.h"
+	"asciitab.h"
+	"utf8tab.h"
+	"iasciitab.h"
+	"utf8tab.h"
+	"iasciitab.h"
+	"utf8tab.h"
+	"asciitab.h"
+	"latin1tab.h"
+	"asciitab.h"
+	"latin1tab.h"
+	"asciitab.h"
+	"asciitab.h"
+	"xmltok_impl.c"
+	"asciitab.h"
+	"latin1tab.h"
+	"asciitab.h"
+	"latin1tab.h"
+	"iasciitab.h"
+	"latin1tab.h"
+	"iasciitab.h"
+	"latin1tab.h"
+	"xmltok_impl.c"
+	"asciitab.h"
+	"latin1tab.h"
+	"asciitab.h"
+	"latin1tab.h"
+	"iasciitab.h"
+	"latin1tab.h"
+	"iasciitab.h"
+	"latin1tab.h"
+	"xmltok_ns.c"
+	"xmltok_ns.c"
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/nametab.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/xmltok_impl.h
+	<stddef.h>
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/xmltok_impl.c
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/asciitab.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/utf8tab.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/iasciitab.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/latin1tab.h
+
+1337508693 /home/vikesh/bin/libofa-0.9.3/lib/expat/xmltok_ns.c
+
+1337508693 source:/home/vikesh/bin/libofa-0.9.3/lib/expat/xmltok_impl.c
+
+1337508693 source:/home/vikesh/bin/libofa-0.9.3/lib/expat/xmltok_ns.c
+

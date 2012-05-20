@@ -12,7 +12,7 @@
 // DATE CREATED: 1/12/06
 
 #include <vector>
-#include "ofa1/ofa.h"
+#include "../include/ofa1/ofa.h"
 #include "signal_op.h"
 #include "fft_op.h"
 #include "frametracker_op.h"
@@ -46,7 +46,7 @@ void ofa_get_version(int *major, int *minor, int *rev)
 
 // ofa_create_print is the top level function generating the fingerprint.
 // NOTE THAT THE PASSED IN DATA MAY BE BYTE SWAPPED DURING THE METHOD.
-// ASSUME THAT DATA IN THE INPUT BUFFER IS DESTROYED AS A SIDE-EFFECT OF 
+// ASSUME THAT DATA IN THE INPUT BUFFER IS DESTROYED AS A SIDE-EFFECT OF
 // CALLING THIS FUNCTION
 //
 // data: a buffer of 16-bit samples in interleaved format (if stereo), i.e. L,R,L,R, etc.
@@ -103,7 +103,7 @@ preprocessing(short* samples, long size, int sRate, bool stereo, Signal_op& sig)
 {
 	int ch = stereo ? 2 : 1;
 	long sec135 = 135 * sRate * ch;
-	if (size > sec135) size = sec135; 
+	if (size > sec135) size = sec135;
 
 	sig.Load(samples, size, sRate, stereo);
 
@@ -170,7 +170,7 @@ struct pitchPacket {
 };
 
 
-void 
+void
 pitch_print(Signal_op& sig, unsigned char *out)
 {
 	if (sig.GetDuration() > 40000)
@@ -196,12 +196,12 @@ pitch_print(Signal_op& sig, unsigned char *out)
 	double dur, amp;
 	int avPitch;
 	int totalTracks = 0;
-	while (base != 0) 
+	while (base != 0)
 	{
 		TrackData_op* td = base->getBaseTrack();
-		while (td != 0) 
+		while (td != 0)
 		{
-			if (td->isHead() && td->getAvgPitch() > loFreq && td->getAvgPitch() < hiFreq) 
+			if (td->isHead() && td->getAvgPitch() > loFreq && td->getAvgPitch() < hiFreq)
 			{
 				dur = td->getDuration();
 				avPitch = fft.FreqToMidi(td->getAvgPitch());
@@ -274,9 +274,9 @@ pitch_print(Signal_op& sig, unsigned char *out)
 }
 
 static char encodingTable[64] = {
-    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',    
-    'Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f',    
-    'g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',    
+    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
+    'Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f',
+    'g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
     'w','x','y','z','0','1','2','3','4','5','6','7','8','9','+','/'
 };
 
@@ -286,12 +286,12 @@ char *base64encode(const char *input, int lentext) {
     static char out[758];
     unsigned char inbuf[3], outbuf[4];
     int i, ctcopy, pos = 0, ixtext = 0;
-    
+
     while (true) {
         int ctremaining = lentext - ixtext;
         if (ctremaining <= 0)
             break;
-        for (i = 0; i < 3; i++) { 
+        for (i = 0; i < 3; i++) {
             int ix = ixtext + i;
             if (ix < lentext)
                 inbuf[i] = (unsigned char) input[ix];
@@ -302,13 +302,13 @@ char *base64encode(const char *input, int lentext) {
         outbuf[1] = (unsigned char) (((inbuf [0] & 0x03) << 4) | ((inbuf [1] & 0xF0) >> 4));
         outbuf[2] = (unsigned char) (((inbuf [1] & 0x0F) << 2) | ((inbuf [2] & 0xC0) >> 6));
         outbuf[3] = (unsigned char) (inbuf [2] & 0x3F);
-	
+
         switch (ctremaining) {
-        case 1: 
-            ctcopy = 2; 
+        case 1:
+            ctcopy = 2;
             break;
-        case 2: 
-            ctcopy = 3; 
+        case 2:
+            ctcopy = 3;
             break;
         default:
             ctcopy = 4;
